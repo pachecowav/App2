@@ -5,4 +5,4 @@
   benpacheco@alumnos.uai.cl
 
 - **Tomas Calquin**  
-  @ealumnos.uai.cl
+  tcalquin@alumnos.uai.cl
