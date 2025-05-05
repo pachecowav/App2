@@ -1,8 +1,8 @@
-import Modelos.cultivo;
-import Modelos.parcela;
-import Servicios.gestioncultivos;
-import Servicios.gestor_de_parcelas;
-import Utiles.gestorcsv;
+import Modelos.Cultivo;
+import Modelos.Parcela;
+import Servicios.GestorCultivos;
+import Servicios.GestorParcelas;
+import Utiles.GestorCSV;
 import java.util.*;
 
 public class App2 {
