@@ -16,8 +16,8 @@ public class App2 {
         Scanner scanner = new Scanner(System.in);
 
         // Leer cultivos desde el CSV
-        List<cultivo> cultivos = gestorcsv.leerDesdeCSV(archivoCSV);
-        List<parcela> parcelas = gestor_de_parcelas.extraerParcelasDesdeCultivos(cultivos);
+        List<Cultivo> cultivos = gestorcsv.leerDesdeCSV(archivoCSV);
+        List<Parcela> parcelas = gestor_de_parcelas.extraerParcelasDesdeCultivos(cultivos);
 
         boolean salir = false;
 
@@ -45,52 +45,52 @@ public class App2 {
 
             switch (opcion) {
                 case "1":
-                    gestioncultivos.listarCultivos(cultivos);
+                    GestorCultivos.listarCultivos(cultivos);
                     break;
                 case "2":
-                    gestioncultivos.crearCultivo(cultivos, scanner);
+                    GestorCultivos.crearCultivo(cultivos, scanner);
                     break;
                 case "3":
-                    gestioncultivos.editarCultivo(cultivos, scanner);
+                    GestorCultivos.editarCultivo(cultivos, scanner);
                     break;
                 case "4":
-                    gestioncultivos.eliminarCultivo(cultivos, scanner);
+                    GestorCultivos.eliminarCultivo(cultivos, scanner);
                     break;
                 case "5":
-                    gestor_de_parcelas.listarParcelas(parcelas);
+                    GestorParcelas.listarParcelas(parcelas);
                     break;
                 case "6":
-                    gestor_de_parcelas.agregarParcela(parcelas, scanner);
+                    GestorParcelas.agregarParcela(parcelas, scanner);
                     break;
                 case "7":
-                    gestor_de_parcelas.editarParcela(parcelas, scanner);
+                    GestorParcelas.editarParcela(parcelas, scanner);
                     break;
                 case "8":
-                    gestor_de_parcelas.eliminarParcela(parcelas, cultivos, scanner);
+                    GestorParcelas.eliminarParcela(parcelas, cultivos, scanner);
                     break;
                 case "9":
-                    gestor_de_parcelas.asignarCultivoAParcela(parcelas, cultivos, scanner);
+                    GestorParcelas.asignarCultivoAParcela(parcelas, cultivos, scanner);
                     break;
                 case "10":
-                    gestioncultivos.registrarActividad(cultivos, scanner);
+                    GestorCultivos.registrarActividad(cultivos, scanner);
                     break;
                 case "11":
-                    gestioncultivos.listarActividades(cultivos, scanner);
+                    GestorCultivos.listarActividades(cultivos, scanner);
                     break;
                 case "12":
                     gestioncultivos.eliminarActividad(cultivos, scanner);
                     break;
                 case "13":
-                    gestioncultivos.marcarActividadComoCompletada(cultivos, scanner);
+                    GestorCultivos.marcarActividadComoCompletada(cultivos, scanner);
                     break;
                 case "14":
-                    gestioncultivos.buscarCultivos(cultivos, scanner);
+                    GestorCultivos.buscarCultivos(cultivos, scanner);
                     break;
                 case "15":
-                    gestioncultivos.reporteCultivos(cultivos);
+                    GestorCultivos.reporteCultivos(cultivos);
                     break;
                 case "16":
-                    gestorcsv.guardarEnCSV(archivoCSV, cultivos);
+                    GestorCSV.guardarEnCSV(archivoCSV, cultivos);
                     System.out.println("Cambios guardados en " + archivoCSV + ". Saliendo...");
                     salir = true;
                     break;
