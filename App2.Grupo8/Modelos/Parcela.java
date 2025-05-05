@@ -1,4 +1,4 @@
-package models;
+package Modelos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,26 @@ public class Parcela {
         this.codigo = codigo;
         this.ubicacion = ubicacion;
         this.tamaño = tamaño;
+        this.cultivos = new ArrayList<>();
+    }
+
+    public void setTamano(double tamano) {
+        this.tamaño = tamano;
+    }
+
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+    
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Parcela(String codigo2, double tam, String ubicacion2) {
+        this.codigo = codigo2;
+        this.tamaño = tam;
+        this.ubicacion = ubicacion2;
         this.cultivos = new ArrayList<>();
     }
 
