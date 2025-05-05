@@ -1,4 +1,4 @@
-package models;
+package Modelos;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,12 @@ public class Actividad {
     public Actividad(String tipo, LocalDate fecha) {
         this.tipo = tipo;
         this.fecha = fecha;
+        this.completada = false;
+    }
+
+    public Actividad(String tipo2, String fecha2) {
+        this.tipo = tipo2;
+        this.fecha = LocalDate.parse(fecha2);
         this.completada = false;
     }
 
@@ -41,5 +47,11 @@ public class Actividad {
             act.completar();
         }
         return act;
+    }
+    public String aCSV() {
+        return "actividad_csv_representation";
+    }
+    public void setCompletada(boolean b) {
+        throw new UnsupportedOperationException("Unimplemented method 'setCompletada'");
     }
 }
