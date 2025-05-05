@@ -4,9 +4,10 @@ import Servicios.GestorCultivos;
 import Servicios.GestorParcelas;
 import Utiles.GestorCSV;
 import java.util.*;
+import java.io.IOException;
 
 public class App2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.out.println("Uso: java App2 <archivo_csv>");
             return;
@@ -16,8 +17,8 @@ public class App2 {
         Scanner scanner = new Scanner(System.in);
 
         // Leer cultivos desde el CSV
-        List<Cultivo> cultivos = gestorcsv.leerDesdeCSV(archivoCSV);
-        List<Parcela> parcelas = gestor_de_parcelas.extraerParcelasDesdeCultivos(cultivos);
+        List<Cultivo> cultivos = GestorCSV.leerDesdeCSV(archivoCSV);
+        List<Parcela> parcelas = GestorParcelas.extraerParcelasDesdeCultivos(cultivos);
 
         boolean salir = false;
 
@@ -78,7 +79,7 @@ public class App2 {
                     GestorCultivos.listarActividades(cultivos, scanner);
                     break;
                 case "12":
-                    gestioncultivos.eliminarActividad(cultivos, scanner);
+                    GestorCultivos.eliminarActividad(cultivos, scanner);
                     break;
                 case "13":
                     GestorCultivos.marcarActividadComoCompletada(cultivos, scanner);
@@ -99,6 +100,11 @@ public class App2 {
                     break;
             }
         }
+
+        scanner.close();
+    }
+}
+
 
         scanner.close();
     }
