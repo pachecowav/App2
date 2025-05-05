@@ -14,3 +14,18 @@ Paquetes principales:
    - `CSVManager` (lectura/escritura de archivos)
    - `ValidadorDatos`
      
+src/
+└── App2/
+    └── Grupo8/
+        ├── Modelos/
+        │   ├── Actividad.java
+        │   ├── Cultivo.java
+        │   ├── ElementoAgricola.java
+        │   └── Parcela.java
+        ├── Servicios/
+        │   ├── GestorCultivos.java
+        │   └── GestorParcelas.java
+        ├── Utiles/
+        │   └── GestorCSV.java
+        └── App2.java 
+
