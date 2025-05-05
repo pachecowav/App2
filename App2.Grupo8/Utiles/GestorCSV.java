@@ -1,11 +1,12 @@
-package utils;
+package Utiles;
 
-import models.Actividad;
-import models.Cultivo;
-import services.GestorCultivos;
+import Modelos.Actividad;
+import Modelos.Cultivo;
+import Servicios.GestorCultivos;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GestorCSV {
@@ -43,4 +44,29 @@ public class GestorCSV {
         }
         bw.close();
     }
+
+    public static List<Cultivo> leerDesdeCSV(String archivo) {
+    List<Cultivo> cultivos = new ArrayList<>();
+    try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            Cultivo c = Cultivo.desdeCSV(linea);
+            cultivos.add(c);
+        }
+    } catch (IOException e) {
+        System.out.println("Error al leer el archivo: " + e.getMessage());
+    }
+    return cultivos;
+}
+public static void guardarCultivosEnCSV(String archivo, List<Cultivo> cultivos) {
+    try (PrintWriter pw = new PrintWriter(new FileWriter(archivo))) {
+        for (Cultivo c : cultivos) {
+            pw.println(c.aCSV());
+        }
+        System.out.println("Cultivos guardados correctamente en el archivo.");
+    } catch (IOException e) {
+        System.out.println("Error al guardar en el archivo: " + e.getMessage());
+    }
+}
+
 }
