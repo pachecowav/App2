@@ -1,23 +1,29 @@
-package models;
+ppackage Modelos;
 
 import java.time.LocalDate;
 
 public abstract class ElementoAgricola {
     protected String nombre;
-    protected LocalDate fecha;
+    protected String fecha;
     protected String estado;
 
-    public ElementoAgricola(String nombre, LocalDate fecha, String estado) {
+    public ElementoAgricola(String nombre, String fecha2, String estado) {
         this.nombre = nombre;
-        this.fecha = fecha;
+        this.fecha = fecha2;
         this.estado = estado;
+    }
+
+    public ElementoAgricola(String nombre2, LocalDate fechaSiembra, String estado2) {
+        this.nombre = nombre2;
+        this.fecha = fechaSiembra.toString();
+        this.estado = estado2;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -29,7 +35,7 @@ public abstract class ElementoAgricola {
         this.nombre = nombre;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
