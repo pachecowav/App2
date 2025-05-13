@@ -29,3 +29,18 @@ src/
         │   └── GestorCSV.java
         └── App2.java 
 
+
+
+      2. Manejo de modificadores:
+      -Los campos de las clases (nombre, fecha, estado, etc.) se declaran como private mientras que los Getters y Setters publicos dan acceso controlado a los atributos.
+      Ej. Private:
+      public class Cultivo extends ElementoAgricola {
+    private String variedad; // Acceso restringido
+   
+}
+      Ej. Public: 
+      public String getVariedad() { return variedad; }
+public void setVariedad(String variedad) { this.variedad = variedad; }
+
+
+
