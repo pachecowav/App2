@@ -9,9 +9,9 @@ Paquetes principales:
 2. `servicios`: Lógica de negocio y gestión de datos
    - `GestorCultivos`
    - `GestorParcelas`
-   - `GestorActividades`
+
 3. `utilidad`: Utilidades generales
-   - `CSVManager` (lectura/escritura de archivos)
+   - `GestorCSV` (lectura/escritura de archivos)
    - `ValidadorDatos`
      
 src/
